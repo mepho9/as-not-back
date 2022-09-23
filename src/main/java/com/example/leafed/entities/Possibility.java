@@ -17,18 +17,9 @@ import javax.persistence.OneToMany;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Possibility {
-    private Long possibilityId;
-
-    public void setPossibilityId(Long possibilityId) {
-        this.possibilityId = possibilityId;
-    }
 
     @Id
-    public Long getPossibilityId() {
-        return possibilityId;
-    }
-
-
+    private Long possibilityId;
     @ManyToOne
     private Member member;
     @ManyToOne

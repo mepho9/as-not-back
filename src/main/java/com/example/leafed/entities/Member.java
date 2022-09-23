@@ -18,11 +18,9 @@ public class Member {
 
     @Column(nullable = false)
     private String pseudo;
+
     private String country;
-    @Column(nullable = false)
-    private String firstName;
-    @Column(nullable = false)
-    private String lastName;
+
     @Column(nullable = false)
     private LocalDate birthDate;
 

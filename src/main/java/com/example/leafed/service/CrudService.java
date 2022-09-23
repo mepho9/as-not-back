@@ -1,4 +1,4 @@
-package com.example.leafed.services;
+package com.example.leafed.service;
 
 import java.util.List;
 
