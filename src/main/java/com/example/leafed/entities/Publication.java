@@ -13,11 +13,10 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Publication {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long publicationId;
 
     @Column(nullable = false)
@@ -25,12 +24,12 @@ public class Publication {
 
 
     @ManyToOne
-    private Member member;
+    private Member memberPublication;
 
-    @OneToMany(mappedBy = "publication")
+    @OneToMany(mappedBy = "publicationPoss")
     private List<Possibility> possibilities;
 
-    @OneToMany(mappedBy = "publication")
+    @OneToMany(mappedBy = "publicationCom")
     private List<Comment> comments;
 
 }

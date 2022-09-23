@@ -10,10 +10,9 @@ import java.util.List;
 @Entity
 @Getter @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -21,17 +20,15 @@ public class Member {
 
     private String country;
 
-    @Column(nullable = false)
     private LocalDate birthDate;
 
-
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "memberPublication")
     private List<Publication> publications;
 
     @OneToMany(mappedBy = "memberCom")
-    private List<Comment> comments;
+    private List<Comment> memberComments;
 
-    @OneToOne
-    private Honor Honor;
+//    @OneToOne
+//    private Honor Honor;
 
 }

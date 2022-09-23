@@ -19,9 +19,9 @@ public class PublicationDTO {
 
     private Member member;
 
-    private List<PossibilityDTO> possibilities;
+    private List<Long> possibilities;
 
-    private List<CommentDTO> comments;
+    private List<Long> comments;
 
 
 }

@@ -3,6 +3,7 @@ package com.example.leafed.dto;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -18,9 +19,10 @@ public class MemberDTO {
 
     private String country;
 
-    private List<PublicationDTO> publications;
+    private LocalDate birthDate;
 
-    private List<CommentDTO> comments;
+    private List<Long> publications;
 
+    private List<Long> comments;
 
 }

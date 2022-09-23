@@ -9,14 +9,12 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Getter @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Comment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -26,9 +24,9 @@ public class Comment {
 
     @ManyToOne
     private Member memberCom;
-    @OneToOne
-    private Rating rating;
+//    @OneToOne
+//    private Rating rating;
     @ManyToOne
-    private Publication publication;
+    private Publication publicationCom;
 
 }
