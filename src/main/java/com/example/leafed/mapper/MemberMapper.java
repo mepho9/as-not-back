@@ -5,6 +5,7 @@ import com.example.leafed.entities.Comment;
 import com.example.leafed.entities.Member;
 import com.example.leafed.entities.Publication;
 import com.example.leafed.form.member.InsertMember;
+import com.example.leafed.form.member.UpdateMember;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 public class MemberMapper {
 
 
-//    @Transactional
+    @Transactional
     public MemberDTO toDto(Member member){
 
         if(member==null){
@@ -65,4 +66,20 @@ public class MemberMapper {
         }
     }
 
+    public Member toEntityU(UpdateMember toUpdate){
+
+        if(toUpdate == null){
+            return null;
+        }
+
+        Member member = new Member();
+
+        member.setPseudo(toUpdate.getPseudo());
+        member.setCountry(toUpdate.getCountry());
+        member.setBirthDate(toUpdate.getBirthDate());
+
+        return member;
+
+
+    }
 }

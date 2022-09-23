@@ -9,6 +9,7 @@ import com.example.leafed.repository.MemberRepository;
 import com.example.leafed.service.MemberService;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -55,7 +56,24 @@ public class MemberServiceImpl implements MemberService {
                 .toList();
     }
 
+
     @Override
+    @Transactional
+    public MemberDTO update(Long id, UpdateMember toUpdate) {
+        if(toUpdate == null || id == null){
+            throw new IllegalArgumentException("child or id does not exist");
+        }
+        if(!memberRepository.existsById(id)){
+            throw new RuntimeException();
+        }
+
+        Member member = memberMapper.toEntityU(toUpdate);
+        member.setId(id);
+
+        return memberMapper.toDto(memberRepository.save(member));
+    }
+    @Override
+    @Transactional
     public MemberDTO delete(Long id)
     {
         Member member = memberRepository.findById(id)
@@ -66,8 +84,5 @@ public class MemberServiceImpl implements MemberService {
         return memberMapper.toDto(member);
     }
 
-    @Override
-    public MemberDTO update(Long id, UpdateMember toUpdate) {
-        return null;
-    }
+
 }
