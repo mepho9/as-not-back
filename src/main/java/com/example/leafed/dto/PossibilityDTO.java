@@ -12,6 +12,8 @@ public class PossibilityDTO {
 
     private Long possibilityId;
 
+    private String possibilityText;
+
     private MemberDTO member;
 
     private PublicationDTO publication;

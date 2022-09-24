@@ -39,13 +39,10 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public MemberDTO getOne(Long id) {
-
         return memberMapper
                 .toDto(this.memberRepository
                         .findById(id)
-                        .orElseThrow
-                        (RuntimeException::new));
-
+                        .orElseThrow(RuntimeException::new));
     }
 
     @Override
@@ -61,7 +58,7 @@ public class MemberServiceImpl implements MemberService {
     @Transactional
     public MemberDTO update(Long id, UpdateMember toUpdate) {
         if(toUpdate == null || id == null){
-            throw new IllegalArgumentException("child or id does not exist");
+            throw new IllegalArgumentException("member or id doesn't exist");
         }
         if(!memberRepository.existsById(id)){
             throw new RuntimeException();
@@ -76,8 +73,11 @@ public class MemberServiceImpl implements MemberService {
     @Transactional
     public MemberDTO delete(Long id)
     {
-        Member member = memberRepository.findById(id)
-                                        .orElseThrow(RuntimeException::new);
+        Member member =
+                    memberRepository
+                        .findById(id)
+                        .orElseThrow(RuntimeException::new);
+
         this.memberRepository.delete(member);
         member.setId(null);
 

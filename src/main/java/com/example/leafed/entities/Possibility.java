@@ -17,6 +17,7 @@ public class Possibility {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long possibilityId;
 
+    private String possibilityText;
     @ManyToOne
     private Publication publicationPoss;
 }
