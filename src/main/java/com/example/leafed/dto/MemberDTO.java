@@ -17,6 +17,8 @@ public class MemberDTO {
 
     private String pseudo;
 
+    private String username;
+
     private String country;
 
     private LocalDate birthDate;

@@ -16,6 +16,10 @@ public class InsertMember {
 
     private LocalDate birthDate;
 
+    private String username;
+
+    private String password;
+
     private List<Long> publicationsId = new ArrayList<>();
 
     private List<Long> commentsId = new ArrayList<>();

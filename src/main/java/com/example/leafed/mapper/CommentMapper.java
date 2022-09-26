@@ -20,6 +20,7 @@ public class CommentMapper {
 
         return CommentDTO.builder()
                 .comment(comment.getComment())
+                .commentId(comment.getId())
                 .build();
     }
 

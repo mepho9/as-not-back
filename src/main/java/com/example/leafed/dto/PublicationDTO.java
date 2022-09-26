@@ -17,7 +17,7 @@ public class PublicationDTO {
 
     private String publicationText;
 
-    private Member member;
+    private MemberDTO member;
 
     private List<Long> possibilities;
 

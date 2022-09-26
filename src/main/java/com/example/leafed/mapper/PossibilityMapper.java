@@ -19,6 +19,7 @@ public class PossibilityMapper {
         }
 
         return PossibilityDTO.builder()
+                .possibilityId(possibility.getPossibilityId())
                 .possibilityText(possibility.getPossibilityText())
                 .build();
     }

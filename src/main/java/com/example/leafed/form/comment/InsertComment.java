@@ -9,7 +9,7 @@ public class InsertComment {
 
     private String comment;
 
-    //private Member memberCom;
+    //private Long memberCom;
 
-    //private Publication publicationCom;
+    //private Long publicationCom;
 }

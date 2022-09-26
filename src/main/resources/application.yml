@@ -11,5 +11,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-#        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+#      dialect: org.hibernate.dialect.PostgreSQL95Dialect
+
     show-sql: true
+
+application:
+  jwt:
+    expiresAt: 846000
+    headerPrefix: "Bearer "
+    secret: "Y2nr@Svs1#Rume@v9^r$$hwTm563QpxLfdDTO$VdLLMnNRJmcQ"
+    headerKey: "Authorization"

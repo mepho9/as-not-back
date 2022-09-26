@@ -10,12 +10,11 @@ import java.util.List;
 @Entity
 @Getter @Setter
 @NoArgsConstructor
-public class Member {
+public class Member extends UserAuthentification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String pseudo;
 
     private String country;

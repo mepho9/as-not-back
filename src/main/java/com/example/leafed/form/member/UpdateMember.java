@@ -15,10 +15,9 @@ public class UpdateMember {
 
     private LocalDate birthDate;
 
-    private List<Long> publicationsId;
+    private String username;
 
-    private List<Long> commentsId;
-
+    private String password;
 
 
 }

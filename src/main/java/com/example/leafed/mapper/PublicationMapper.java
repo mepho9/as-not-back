@@ -15,6 +15,12 @@ import java.util.List;
 @Service
 public class PublicationMapper {
 
+    private final MemberMapper memberMapper;
+
+    public PublicationMapper(MemberMapper memberMapper) {
+        this.memberMapper = memberMapper;
+    }
+
     @Transactional
     public PublicationDTO toDto(Publication publication){
         if(publication == null){
@@ -42,7 +48,7 @@ public class PublicationMapper {
         return PublicationDTO.builder()
                 .publicationId(publication.getPublicationId())
                 .publicationText(publication.getPublicationText())
-                .member(publication.getMemberPublication())
+                .member(memberMapper.toDto(publication.getMemberPublication()))
                 .possibilities(possibilitiesId)
                 .comments(commentsId)
                 .build();

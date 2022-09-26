@@ -48,6 +48,7 @@ public class MemberMapper {
                 .birthDate(member.getBirthDate())
                 .publications(publicationsId)
                 .comments(commentsId)
+                .username(member.getUsername())
                 .build();
     }
 
@@ -61,6 +62,8 @@ public class MemberMapper {
             member.setPseudo(toInsert.getPseudo());
             member.setCountry(toInsert.getCountry());
             member.setBirthDate(toInsert.getBirthDate());
+            member.setUsername(toInsert.getUsername());
+            member.setPassword(toInsert.getPassword());
 
             return member;
         }
@@ -72,14 +75,19 @@ public class MemberMapper {
             return null;
         }
 
-        Member member = new Member();
+        else{
 
-        member.setPseudo(toUpdate.getPseudo());
-        member.setCountry(toUpdate.getCountry());
-        member.setBirthDate(toUpdate.getBirthDate());
+            Member member = new Member();
 
-        return member;
+            member.setPseudo(toUpdate.getPseudo());
+            member.setCountry(toUpdate.getCountry());
+            member.setUsername(toUpdate.getUsername());
+            member.setBirthDate(toUpdate.getBirthDate());
+            member.setPassword(toUpdate.getPassword());
 
+            return member;
 
+        }
     }
+
 }

@@ -5,6 +5,7 @@ import com.example.leafed.form.publication.InsertPublication;
 import com.example.leafed.form.publication.UpdatePublication;
 import com.example.leafed.mapper.PublicationMapper;
 import com.example.leafed.service.PublicationService;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class PublicationController {
     }
 
     @PostMapping("/insert")
-    public PublicationDTO insert(@RequestBody InsertPublication toInsert){
+    public PublicationDTO insert(@RequestBody InsertPublication toInsert, Authentication auth){
         return this.publicationService.create(toInsert);
     }
 
