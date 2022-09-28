@@ -11,7 +11,7 @@ public class UserAuthCreateForm {
 
     private String pseudo;
     private String country;
-    private LocalDate birthdate;
+    private LocalDate birthDate;
 
     private String username;
     private String password;
@@ -23,7 +23,7 @@ public class UserAuthCreateForm {
         member.setPassword(password);
         member.setCountry(country);
         member.setPseudo(pseudo);
-        member.setBirthDate(birthdate);
+        member.setBirthDate(birthDate);
 
 
         return member;
